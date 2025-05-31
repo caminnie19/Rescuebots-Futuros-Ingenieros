@@ -18,43 +18,19 @@ Este repositorio trata de ser una versión fiel, traducida al español de la pla
 * `other` es para otros archivos que se pueden usar para entender cómo preparar el vehículo para la competencia. Puede incluir documentación sobre cómo conectarse a un SBC/SBM y cargar archivos allí, conjuntos de datos, especificaciones de hardware, descripciones de protocolos de comunicación, etc. Si no hay nada que agregar a esta ubicación, se puede eliminar el directorio.
 
 ## Introducción
+Módulos del código y relación de componentes electromecánicos
+El código del robot está compuesto por varios módulos principales en MakeCode, que incluyen:
 
-_Esta parte debe ser completada por los participantes con las aclaraciones técnicas sobre el código: de qué módulos consta el código, cómo se relacionan con los componentes electromecánicos del vehículo y cuál es el proceso para construir/compilar/cargar el código a los controladores del vehículo._
-
-## Cómo preparar el repositorio en función de la plantilla
-
-_Elimine esta sección antes de la primera confirmación en el repositorio_
-
-1. Clone este repositorio utilizando la funcionalidad `git clone`.
-2. Elimine el directorio `.git`
-3. [Inicialice un nuevo repositorio público en GitHub](https://github.com/new) siguiendo las instrucciones de la sección "Crear un nuevo repositorio en la línea de comandos" (que aparece después de presionar el botón "Crear repositorio").
-
-
----
-
-Engineering materials
-====
-
-This repository contains engineering materials of a self-driven vehicle's model participating in the WRO Future Engineers competition in the season 2022.
-
-## Content
-
-* `t-photos` contains 2 photos of the team (an official one and one funny photo with all team members)
-* `v-photos` contains 6 photos of the vehicle (from every side, from top and bottom)
-* `video` contains the video.md file with the link to a video where driving demonstration exists
-* `schemes` contains one or several schematic diagrams in form of JPEG, PNG or PDF of the electromechanical components illustrating all the elements (electronic components and motors) used in the vehicle and how they connect to each other.
-* `src` contains code of control software for all components which were programmed to participate in the competition
-* `models` is for the files for models used by 3D printers, laser cutting machines and CNC machines to produce the vehicle elements. If there is nothing to add to this location, the directory can be removed.
-* `other` is for other files which can be used to understand how to prepare the vehicle for the competition. It may include documentation how to connect to a SBC/SBM and upload files there, datasets, hardware specifications, communication protocols descriptions etc. If there is nothing to add to this location, the directory can be removed.
-
-## Introduction
-
-_This part must be filled by participants with the technical clarifications about the code: which modules the code consists of, how they are related to the electromechanical components of the vehicle, and what is the process to build/compile/upload the code to the vehicle’s controllers._
-
-## How to prepare the repo based on the template
-
-_Remove this section before the first commit to the repository_
-
-1. Clone this repo by using the `git clone` functionality.
-2. Remove `.git` directory
-3. [Initialize a new public repository on GitHub](https://github.com/new) by following instructions from "create a new repository on the command line" section (appeared after pressing "Create repository" button).
+Bloques Basic: utilizados para funciones básicas de control y estructura del programa.
+Extensión NezhaV2: permite mover los motores y el servo de manera sencilla, controlando la velocidad del motor y la posición del servo en grados.
+Variables: usadas para almacenar datos importantes como la cantidad de vueltas o la posición actual.
+Lógica: para decidir cuándo girar, mover o detener el robot, y controlar la repetición de los movimientos.
+Relación de componentes electromecánicos:
+Placa Nezha V2: actúa como la interfaz entre la programación y los componentes físicos, permitiendo controlar el motor y el servo.
+Motor de las ruedas traseras: conectado a la placa Nezha V2 en el puerto M2, motiva al robot para avanzar o retroceder y realizar las vueltas.
+Servo de las ruedas delanteras: conectado a la placa en el puerto M3, controla la dirección del robot (direccional), girando a 45 grados en las esquinas de la pista.
+Micro:bit: actúa como el cerebro del robot, ejecutando el programa de MakeCode y enviando las órdenes a la placa Nezha V2.
+Proceso para construir, compilar y cargar el código:
+Construcción: se ensamblan las piezas y componentes en la estructura del robot, conectando el motor trasero y el servo a la placa Nezha V2 en los puertos M2 y M3, respectivamente, y asegurando que la placa esté correctamente fijada al robot.
+Programación: se ingresa el código en el entorno MakeCode, usando bloques para mover los motores y el servo, con las instrucciones para completar 3 vueltas en la pista cuadrada.
+Compilación y carga: desde MakeCode, se compila el programa y se descarga como un archivo .hex, que luego se transfiere a la micro:bit conectándola a la computadora mediante un cable USB y copiando el archivo a la carpeta de la micro:bit. La micro:bit, con su programación cargada, luego controla el robot.
