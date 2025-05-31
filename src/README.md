@@ -1,6 +1,6 @@
-Software de control (https://makecode.microbit.org/S07276-56351-08161-22981)
+Software de control
 ====
-
+ (https://makecode.microbit.org/S07276-56351-08161-22981)
 lamine = -250
 
 def on_forever():
