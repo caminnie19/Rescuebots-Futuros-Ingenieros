@@ -11,6 +11,7 @@ Relación de componentes electromecánicos:
 Placa Nezha V2: actúa como la interfaz entre la programación y los componentes físicos, permitiendo controlar el motor y el servo.
 Motor de las ruedas traseras: conectado a la placa Nezha V2 en el puerto M2, motiva al robot para avanzar o retroceder y realizar las vueltas.
 Servo de las ruedas delanteras: conectado a la placa en el puerto M3, controla la dirección del robot (direccional), girando a 45 grados en las esquinas de la pista.
+Sensores ultrasonicos: Conectados a la placa en los puertos J3 y J4, detecta cuando se acerce mucho a una pared y manda una señal a el servo para que gire y se aleje. 
 Camara huskylens: conectada a la placa en el puerto IIC, reconoce colores y manda señales a la tarjeta microbit de cuando girar depende del color
 Micro:bit: actúa como el cerebro del robot, ejecutando el programa de MakeCode y enviando las órdenes a la placa Nezha V2.
 Proceso para construir, compilar y cargar el código:
